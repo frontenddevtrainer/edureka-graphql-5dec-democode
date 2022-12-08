@@ -3,7 +3,7 @@ const { gql } = require("apollo-server-express")
 // typeDefs
 const schema = gql`
 
-    type Offers {
+    type Offer {
         type : String,
         percent: Int,
         isActive: Boolean,
@@ -11,7 +11,8 @@ const schema = gql`
     }
 
     type Query {
-        offers : [Offers]
+        offers : [Offer],
+        offer (id: Int): Offer
     }
 `
 // export default schema;

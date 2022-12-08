@@ -1,8 +1,9 @@
-const { GetOffers } = require("./offers");
+const { GetOffers, GetOfferById } = require("./offers");
 
 const resolvers = {
     Query : {
-        offers : GetOffers
+        offers : GetOffers,
+        offer: GetOfferById
     }
 }
 
