@@ -3,6 +3,12 @@ const { gql } = require("apollo-server-express")
 // typeDefs
 const schema = gql`
 
+    input OfferInput {
+        type : String,
+        percent: Int,
+        isActive: Boolean,
+    }
+
     type Offer {
         type : String,
         percent: Int,
@@ -16,7 +22,7 @@ const schema = gql`
     }
 
     type Mutation {
-        addOffer(id : Int): Offer
+        addOffer(offer: OfferInput ): Offer
     }
 `
 // export default schema;

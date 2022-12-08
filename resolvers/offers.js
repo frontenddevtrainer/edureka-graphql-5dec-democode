@@ -11,8 +11,11 @@ function GetOfferById(context, args){
     
 }
 
-function AddOffer(context, args){
-    
+async function AddOffer(context, args){
+    console.log(args);
+    const response = await axios.post("http://localhost:3300/offers", args.offer);
+    const { data } = response;
+    return data;
 }
 
 module.exports = {
