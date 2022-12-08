@@ -1,29 +1,18 @@
-const offers = [
-    {
-        type: "Laptop",
-        id: 1,
-        percent: 50,
-        isActive: true
-    },
-    {
-        type: "Iphone",
-        id: 2,
-        percent: 50,
-        isActive: true
-    }
-]
+const axios = require("axios");
 
-function GetOffers(){
-    return offers
+async function GetOffers(){
+    // return axios.get("http://localhost:3300/offers").then(( response )=>{ return response.data });
+    const response = await axios.get("http://localhost:3300/offers");
+    const { data } = response;
+    return data;
 }
 
 function GetOfferById(context, args){
-    return offers.find((offer)=>{ return offer.id === args.id })
+    
 }
 
 function AddOffer(context, args){
-    offers.push(args);
-    return args
+    
 }
 
 module.exports = {
