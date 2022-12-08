@@ -6,7 +6,10 @@ const Resolvers = require("./resolvers");
 
 async function main(){
     // GraphQL
-    const server = new ApolloServer({ typeDefs:Schema, resolvers: Resolvers  });
+    const server = new ApolloServer({ 
+        typeDefs:Schema, 
+        resolvers: Resolvers,
+      });
 
     // Rest API, Static
     const app = express();

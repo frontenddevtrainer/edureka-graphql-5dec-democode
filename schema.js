@@ -14,6 +14,10 @@ const schema = gql`
         offers : [Offer],
         offer (id: Int): Offer
     }
+
+    type Mutation {
+        addOffer(id : Int): Offer
+    }
 `
 // export default schema;
 module.exports = schema;
